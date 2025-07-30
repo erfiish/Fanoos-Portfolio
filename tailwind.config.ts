@@ -72,7 +72,8 @@ export default {
 				'gradient-lantern': 'var(--gradient-lantern)',
 				'gradient-night': 'var(--gradient-night)',
 				'gradient-violet': 'var(--gradient-violet)',
-				'gradient-brand': 'var(--gradient-brand)'
+				'gradient-brand': 'var(--gradient-brand)',
+				'gradient-blue': 'var(--gradient-blue)'
 			},
 			boxShadow: {
 				'glow-primary': 'var(--glow-primary)',

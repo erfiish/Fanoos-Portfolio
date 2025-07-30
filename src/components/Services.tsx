@@ -35,7 +35,7 @@ export const Services = () => {
         'پشتیبانی تصمیمات بالینی'
       ],
       color: 'white' as const,
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-600 to-blue-700'
     },
     {
       icon: Building2,
@@ -48,7 +48,7 @@ export const Services = () => {
         'آموزش هوشمند'
       ],
       color: 'violet' as const,
-      gradient: 'from-purple-500 to-indigo-500'
+      gradient: 'from-purple-600 to-indigo-600'
     }
   ];
 

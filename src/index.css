@@ -6,11 +6,11 @@
 
 @layer base {
   :root {
-    /* Night sky background - Deep space */
-    --background: 211 89% 14%;
+    /* Night sky background - Keep original deep space */
+    --background: 216 47% 8%;
     --foreground: 0 0% 100%;
 
-    /* Brand colors - Primary Purple & Secondary Navy */
+    /* Brand colors - Primary Purple & Secondary Navy Blue */
     --brand-primary: 294 72% 45%;
     --brand-secondary: 211 89% 14%;
     
@@ -20,23 +20,23 @@
     --lantern-violet: 294 72% 45%;
     --lantern-moonlight: 216 33% 88%;
 
-    /* Card and surface colors */
-    --card: 211 89% 18%;
+    /* Card and surface colors - Keep original night tones */
+    --card: 218 41% 15%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 211 89% 18%;
+    --popover: 218 41% 15%;
     --popover-foreground: 0 0% 100%;
 
     /* Primary colors - Brand Purple */
     --primary: 294 72% 45%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary colors - Brand Navy */
+    /* Secondary colors - Use brand navy blue */
     --secondary: 211 89% 14%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted colors - Navy variants */
-    --muted: 211 89% 20%;
+    /* Muted colors - Soft night with blue accent */
+    --muted: 218 41% 20%;
     --muted-foreground: 211 30% 68%;
 
     /* Accent colors - Purple variants */
@@ -46,18 +46,19 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders and inputs - Navy tones */
-    --border: 211 89% 25%;
-    --input: 211 89% 25%;
+    /* Borders and inputs - Keep original with blue accents */
+    --border: 218 41% 25%;
+    --input: 218 41% 25%;
     --ring: 294 72% 45%;
 
     --radius: 1rem;
 
     /* Gradients for lantern effects with brand colors */
     --gradient-lantern: linear-gradient(135deg, hsl(294, 72%, 45%), hsl(294, 72%, 65%));
-    --gradient-night: linear-gradient(180deg, hsl(211, 89%, 14%), hsl(211, 89%, 18%));
+    --gradient-night: linear-gradient(180deg, hsl(216, 47%, 8%), hsl(218, 41%, 12%));
     --gradient-violet: linear-gradient(135deg, hsl(294, 72%, 45%), hsl(294, 72%, 55%));
     --gradient-brand: linear-gradient(135deg, hsl(294, 72%, 45%), hsl(211, 89%, 25%));
+    --gradient-blue: linear-gradient(135deg, hsl(211, 89%, 14%), hsl(211, 89%, 25%));
     
     /* Glow effects with brand colors */
     --glow-primary: 0 0 40px hsl(294, 72%, 45%);
