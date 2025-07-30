@@ -7,56 +7,61 @@
 @layer base {
   :root {
     /* Night sky background - Deep space */
-    --background: 216 47% 8%;
+    --background: 211 89% 14%;
     --foreground: 0 0% 100%;
 
-    /* Lantern glow colors */
-    --lantern-amber: 44 91% 58%;
+    /* Brand colors - Primary Purple & Secondary Navy */
+    --brand-primary: 294 72% 45%;
+    --brand-secondary: 211 89% 14%;
+    
+    /* Lantern glow colors with brand integration */
+    --lantern-amber: 294 72% 65%;
     --lantern-white: 0 0% 100%;
-    --lantern-violet: 248 53% 65%;
+    --lantern-violet: 294 72% 45%;
     --lantern-moonlight: 216 33% 88%;
 
     /* Card and surface colors */
-    --card: 218 41% 15%;
+    --card: 211 89% 18%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 218 41% 15%;
+    --popover: 211 89% 18%;
     --popover-foreground: 0 0% 100%;
 
-    /* Primary colors - Lantern amber */
-    --primary: 44 91% 58%;
-    --primary-foreground: 216 47% 8%;
+    /* Primary colors - Brand Purple */
+    --primary: 294 72% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary colors - Night accent */
-    --secondary: 248 53% 65%;
+    /* Secondary colors - Brand Navy */
+    --secondary: 211 89% 14%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted colors - Soft night */
-    --muted: 218 41% 20%;
-    --muted-foreground: 216 33% 68%;
+    /* Muted colors - Navy variants */
+    --muted: 211 89% 20%;
+    --muted-foreground: 211 30% 68%;
 
-    /* Accent colors - Violet glow */
-    --accent: 248 53% 65%;
+    /* Accent colors - Purple variants */
+    --accent: 294 72% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders and inputs - Subtle night */
-    --border: 218 41% 25%;
-    --input: 218 41% 25%;
-    --ring: 44 91% 58%;
+    /* Borders and inputs - Navy tones */
+    --border: 211 89% 25%;
+    --input: 211 89% 25%;
+    --ring: 294 72% 45%;
 
     --radius: 1rem;
 
-    /* Gradients for lantern effects */
-    --gradient-lantern: linear-gradient(135deg, hsl(44, 91%, 58%), hsl(44, 91%, 68%));
-    --gradient-night: linear-gradient(180deg, hsl(216, 47%, 8%), hsl(218, 41%, 12%));
-    --gradient-violet: linear-gradient(135deg, hsl(248, 53%, 65%), hsl(248, 53%, 75%));
+    /* Gradients for lantern effects with brand colors */
+    --gradient-lantern: linear-gradient(135deg, hsl(294, 72%, 45%), hsl(294, 72%, 65%));
+    --gradient-night: linear-gradient(180deg, hsl(211, 89%, 14%), hsl(211, 89%, 18%));
+    --gradient-violet: linear-gradient(135deg, hsl(294, 72%, 45%), hsl(294, 72%, 55%));
+    --gradient-brand: linear-gradient(135deg, hsl(294, 72%, 45%), hsl(211, 89%, 25%));
     
-    /* Glow effects */
-    --glow-amber: 0 0 40px hsl(44, 91%, 58%);
-    --glow-violet: 0 0 40px hsl(248, 53%, 65%);
+    /* Glow effects with brand colors */
+    --glow-primary: 0 0 40px hsl(294, 72%, 45%);
+    --glow-secondary: 0 0 40px hsl(211, 89%, 35%);
     --glow-white: 0 0 30px hsl(0, 0%, 100%);
 
     /* Typography scale for Persian */
@@ -204,10 +209,10 @@
   /* Custom Animations */
   @keyframes lanternGlow {
     0% {
-      filter: drop-shadow(0 0 20px hsl(44, 91%, 58%));
+      filter: drop-shadow(0 0 20px hsl(294, 72%, 45%));
     }
     100% {
-      filter: drop-shadow(0 0 40px hsl(44, 91%, 68%));
+      filter: drop-shadow(0 0 40px hsl(294, 72%, 65%));
     }
   }
 

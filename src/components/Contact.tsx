@@ -152,7 +152,7 @@ export const Contact = () => {
                 <DialogTrigger asChild>
                   <Button 
                     size="lg" 
-                    className="w-full bg-gradient-lantern hover:shadow-glow-amber transition-all duration-300"
+                    className="w-full bg-gradient-lantern hover:shadow-glow-primary transition-all duration-300"
                   >
                     <Calendar className="w-5 h-5 ml-2" />
                     رزرو جلسه مشاوره رایگان
@@ -283,7 +283,7 @@ export const Contact = () => {
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full bg-gradient-violet hover:shadow-glow-violet transition-all duration-300"
+                      className="w-full bg-gradient-brand hover:shadow-glow-primary transition-all duration-300"
                     >
                       <MessageSquare className="w-5 h-5 ml-2" />
                       ارسال پیام

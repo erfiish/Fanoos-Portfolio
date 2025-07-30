@@ -117,7 +117,7 @@ export const Services = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-glow-amber`}>
+                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-glow-primary`}>
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
                     
@@ -167,7 +167,7 @@ export const Services = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Button 
-                      className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-glow-amber transition-all duration-300 group"
+                      className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-glow-primary transition-all duration-300 group"
                       size="lg"
                     >
                       <span>بیشتر بدانید</span>
