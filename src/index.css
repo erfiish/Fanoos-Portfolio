@@ -2,96 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Fanoos AI Design System - Persian-optimized with lantern metaphor */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Night sky background - Deep space */
+    --background: 216 47% 8%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Lantern glow colors */
+    --lantern-amber: 44 91% 58%;
+    --lantern-white: 0 0% 100%;
+    --lantern-violet: 248 53% 65%;
+    --lantern-moonlight: 216 33% 88%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Card and surface colors */
+    --card: 218 41% 15%;
+    --card-foreground: 0 0% 100%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: 218 41% 15%;
+    --popover-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Primary colors - Lantern amber */
+    --primary: 44 91% 58%;
+    --primary-foreground: 216 47% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Secondary colors - Night accent */
+    --secondary: 248 53% 65%;
+    --secondary-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted colors - Soft night */
+    --muted: 218 41% 20%;
+    --muted-foreground: 216 33% 68%;
+
+    /* Accent colors - Violet glow */
+    --accent: 248 53% 65%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and inputs - Subtle night */
+    --border: 218 41% 25%;
+    --input: 218 41% 25%;
+    --ring: 44 91% 58%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Gradients for lantern effects */
+    --gradient-lantern: linear-gradient(135deg, hsl(44, 91%, 58%), hsl(44, 91%, 68%));
+    --gradient-night: linear-gradient(180deg, hsl(216, 47%, 8%), hsl(218, 41%, 12%));
+    --gradient-violet: linear-gradient(135deg, hsl(248, 53%, 65%), hsl(248, 53%, 75%));
+    
+    /* Glow effects */
+    --glow-amber: 0 0 40px hsl(44, 91%, 58%);
+    --glow-violet: 0 0 40px hsl(248, 53%, 65%);
+    --glow-white: 0 0 30px hsl(0, 0%, 100%);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Typography scale for Persian */
+    --text-hero: 4rem;
+    --text-heading: 2.5rem;
+    --text-subheading: 1.5rem;
+    --text-body: 1.125rem;
+    --text-caption: 0.875rem;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Spacing for Persian layout */
+    --spacing-section: 8rem;
+    --spacing-element: 2rem;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Animation durations */
+    --duration-fast: 0.2s;
+    --duration-normal: 0.3s;
+    --duration-slow: 0.6s;
+    --duration-lantern: 2s;
 
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Persian font family */
+    --font-persian: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 }
 
 @layer base {
@@ -100,6 +88,156 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-persian antialiased;
+    background: var(--gradient-night);
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Persian Typography */
+  .text-hero {
+    font-size: var(--text-hero);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .text-heading {
+    font-size: var(--text-heading);
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .text-subheading {
+    font-size: var(--text-subheading);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .text-body {
+    font-size: var(--text-body);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .text-caption {
+    font-size: var(--text-caption);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  /* Lantern Glow Effects */
+  .glow-amber {
+    box-shadow: var(--glow-amber);
+  }
+
+  .glow-violet {
+    box-shadow: var(--glow-violet);
+  }
+
+  .glow-white {
+    box-shadow: var(--glow-white);
+  }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-lantern {
+    background: var(--gradient-lantern);
+  }
+
+  .bg-gradient-night {
+    background: var(--gradient-night);
+  }
+
+  .bg-gradient-violet {
+    background: var(--gradient-violet);
+  }
+
+  /* Animation Classes */
+  .animate-lantern-glow {
+    animation: lanternGlow var(--duration-lantern) ease-in-out infinite alternate;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn var(--duration-slow) ease-out forwards;
+  }
+
+  /* Persian Layout Utilities */
+  .section-spacing {
+    padding-top: var(--spacing-section);
+    padding-bottom: var(--spacing-section);
+  }
+
+  .element-spacing {
+    margin-bottom: var(--spacing-element);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes lanternGlow {
+    0% {
+      filter: drop-shadow(0 0 20px hsl(44, 91%, 58%));
+    }
+    100% {
+      filter: drop-shadow(0 0 40px hsl(44, 91%, 68%));
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    :root {
+      --text-hero: 2.5rem;
+      --text-heading: 2rem;
+      --text-subheading: 1.25rem;
+      --spacing-section: 4rem;
+    }
   }
 }

@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				persian: ['Vazirmatn', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,16 +55,23 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				// Lantern-specific colors
+				lantern: {
+					amber: 'hsl(var(--lantern-amber))',
+					white: 'hsl(var(--lantern-white))',
+					violet: 'hsl(var(--lantern-violet))',
+					moonlight: 'hsl(var(--lantern-moonlight))'
 				}
+			},
+			backgroundImage: {
+				'gradient-lantern': 'var(--gradient-lantern)',
+				'gradient-night': 'var(--gradient-night)',
+				'gradient-violet': 'var(--gradient-violet)'
+			},
+			boxShadow: {
+				'glow-amber': 'var(--glow-amber)',
+				'glow-violet': 'var(--glow-violet)',
+				'glow-white': 'var(--glow-white)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -88,7 +98,10 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'lantern-glow': 'lanternGlow 2s ease-in-out infinite alternate',
+				'float': 'float 6s ease-in-out infinite',
+				'fade-in': 'fadeIn 0.6s ease-out forwards'
 			}
 		}
 	},
