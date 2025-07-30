@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# Fanoos Light Path 🌟
 
-## Project info
+A modern, responsive website built with React, Vite, and shadcn/ui components. This project showcases a beautiful landing page with smooth animations and professional design.
 
-**URL**: https://lovable.dev/projects/1caa9aa4-50ab-411e-9913-2df38d962b9b
+## 🚀 Live Demo
 
-## How can I edit this code?
+Visit the live site: [https://fanoosai.com](https://fanoosai.com)
 
-There are several ways of editing your application.
+**Repository:** [https://github.com/erfiish/Fanoos-Portfolio](https://github.com/erfiish/Fanoos-Portfolio)
 
-**Use Lovable**
+## 🛠️ Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1caa9aa4-50ab-411e-9913-2df38d962b9b) and start prompting.
+- **Framework:** React 18 + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui + Radix UI
+- **Animations:** Framer Motion
+- **Routing:** React Router DOM
+- **Icons:** Lucide React
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🎨 Features
 
-**Use your preferred IDE**
+- ✨ Modern, responsive design
+- 🎭 Smooth animations and transitions
+- 📱 Mobile-first approach
+- ♿ Accessibility focused
+- ⚡ Fast performance with Vite
+- 🎯 SEO optimized
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Clone the repository
+```bash
+git clone https://github.com/erfiish/Fanoos-Portfolio.git
+cd Fanoos-Portfolio
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start development server
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Build for production
+```bash
+npm run build
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📁 Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/          # React components
+│   ├── ui/             # shadcn/ui components
+│   ├── Hero.tsx        # Hero section
+│   ├── About.tsx       # About section
+│   ├── Services.tsx    # Services section
+│   ├── Projects.tsx    # Projects section
+│   ├── Contact.tsx     # Contact section
+│   └── Lantern.tsx     # Lantern animation
+├── pages/              # Page components
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── main.tsx           # App entry point
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🌐 Deployment
 
-## What technologies are used for this project?
+This project is automatically deployed to GitHub Pages and served via Cloudflare CDN.
 
-This project is built with:
+- **Repository:** [GitHub](https://github.com/erfiish/Fanoos-Portfolio)
+- **Live Site:** [https://fanoosai.com](https://fanoosai.com)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🤝 Contributing
 
-## How can I deploy this project?
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Simply open [Lovable](https://lovable.dev/projects/1caa9aa4-50ab-411e-9913-2df38d962b9b) and click on Share -> Publish.
+## 📄 License
 
-## Can I connect a custom domain to my Lovable project?
+This project is open source and available under the [MIT License](LICENSE).
 
-Yes, you can!
+## 🙏 Acknowledgments
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- [shadcn/ui](https://ui.shadcn.com/) for beautiful UI components
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first CSS
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [Vite](https://vitejs.dev/) for fast development and building
