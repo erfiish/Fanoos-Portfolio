@@ -55,29 +55,22 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Lantern-specific colors with brand integration
+				// Lantern-specific colors
 				lantern: {
 					amber: 'hsl(var(--lantern-amber))',
 					white: 'hsl(var(--lantern-white))',
 					violet: 'hsl(var(--lantern-violet))',
 					moonlight: 'hsl(var(--lantern-moonlight))'
-				},
-				// Brand colors
-				brand: {
-					primary: 'hsl(var(--brand-primary))',
-					secondary: 'hsl(var(--brand-secondary))'
 				}
 			},
 			backgroundImage: {
 				'gradient-lantern': 'var(--gradient-lantern)',
 				'gradient-night': 'var(--gradient-night)',
-				'gradient-violet': 'var(--gradient-violet)',
-				'gradient-brand': 'var(--gradient-brand)',
-				'gradient-blue': 'var(--gradient-blue)'
+				'gradient-violet': 'var(--gradient-violet)'
 			},
 			boxShadow: {
-				'glow-primary': 'var(--glow-primary)',
-				'glow-secondary': 'var(--glow-secondary)',
+				'glow-amber': 'var(--glow-amber)',
+				'glow-violet': 'var(--glow-violet)',
 				'glow-white': 'var(--glow-white)'
 			},
 			borderRadius: {

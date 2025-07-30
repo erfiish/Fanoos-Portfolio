@@ -27,9 +27,9 @@ export const Lantern = ({
   };
 
   const glowColors = {
-    amber: '#B620C7', // Brand primary purple
+    amber: '#F2C94C',
     white: '#FFFFFF',
-    violet: '#B620C7', // Brand primary purple
+    violet: '#6C5CE7',
     moonlight: '#E8EAF0'
   };
 

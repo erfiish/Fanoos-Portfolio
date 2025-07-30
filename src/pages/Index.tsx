@@ -78,7 +78,7 @@ const Index = () => {
 
       {/* Floating Contact Button */}
       <motion.button
-        className="fixed bottom-8 right-8 z-40 bg-gradient-lantern text-primary-foreground p-4 rounded-full shadow-glow-primary hover:shadow-glow-primary hover:scale-110 transition-all duration-300"
+        className="fixed bottom-8 right-8 z-40 bg-gradient-lantern text-primary-foreground p-4 rounded-full shadow-glow-amber hover:shadow-glow-amber hover:scale-110 transition-all duration-300"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 3 }}

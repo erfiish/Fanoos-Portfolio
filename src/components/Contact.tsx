@@ -118,7 +118,7 @@ export const Contact = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                 >
-                  <Card className="bg-card/20 backdrop-blur-sm border-border/50 hover:border-brand-secondary/50 transition-all duration-300">
+                  <Card className="bg-card/20 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
                         <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -152,7 +152,7 @@ export const Contact = () => {
                 <DialogTrigger asChild>
                   <Button 
                     size="lg" 
-                    className="w-full bg-gradient-lantern hover:shadow-glow-primary transition-all duration-300"
+                    className="w-full bg-gradient-lantern hover:shadow-glow-amber transition-all duration-300"
                   >
                     <Calendar className="w-5 h-5 ml-2" />
                     رزرو جلسه مشاوره رایگان
@@ -283,7 +283,7 @@ export const Contact = () => {
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full bg-gradient-brand hover:shadow-glow-primary transition-all duration-300"
+                      className="w-full bg-gradient-violet hover:shadow-glow-violet transition-all duration-300"
                     >
                       <MessageSquare className="w-5 h-5 ml-2" />
                       ارسال پیام

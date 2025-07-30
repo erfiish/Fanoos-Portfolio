@@ -70,7 +70,7 @@ export const About = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
             >
-              <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 h-full group hover:bg-brand-secondary/10">
+              <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 h-full">
                 <CardContent className="p-6 text-center">
                   <motion.div
                     className="w-12 h-12 mx-auto mb-4 rounded-full bg-gradient-lantern flex items-center justify-center"
@@ -100,7 +100,7 @@ export const About = () => {
         >
           <h3 className="text-subheading text-white mb-8">تیم ما</h3>
           
-          <Card className="max-w-md mx-auto bg-gradient-blue backdrop-blur-sm border-brand-secondary/50">
+          <Card className="max-w-md mx-auto bg-card/50 backdrop-blur-sm border-border/50">
             <CardContent className="p-6">
               <motion.div
                 className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-lantern flex items-center justify-center"

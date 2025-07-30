@@ -35,7 +35,7 @@ export const Services = () => {
         'پشتیبانی تصمیمات بالینی'
       ],
       color: 'white' as const,
-      gradient: 'from-blue-600 to-blue-700'
+      gradient: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Building2,
@@ -48,7 +48,7 @@ export const Services = () => {
         'آموزش هوشمند'
       ],
       color: 'violet' as const,
-      gradient: 'from-purple-600 to-indigo-600'
+      gradient: 'from-purple-500 to-indigo-500'
     }
   ];
 
@@ -117,7 +117,7 @@ export const Services = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-glow-primary`}>
+                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-glow-amber`}>
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
                     
@@ -167,7 +167,7 @@ export const Services = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Button 
-                      className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-glow-primary transition-all duration-300 group"
+                      className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-glow-amber transition-all duration-300 group"
                       size="lg"
                     >
                       <span>بیشتر بدانید</span>

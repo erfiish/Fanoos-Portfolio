@@ -91,7 +91,7 @@ export const Hero = () => {
         >
           <Button 
             size="lg" 
-            className="bg-gradient-lantern text-primary-foreground hover:shadow-glow-primary transition-all duration-300 px-8 py-4 text-lg font-medium"
+            className="bg-gradient-lantern text-primary-foreground hover:shadow-glow-amber transition-all duration-300 px-8 py-4 text-lg font-medium"
           >
             کشف خدمات ما
           </Button>
