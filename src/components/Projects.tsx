@@ -43,16 +43,16 @@ export const Projects = () => {
 
   const statusColors = {
     'فعال': 'bg-green-500',
-    'در حال توسعه': 'bg-blue-500',
+    'در حال توسعه': 'bg-purple-500',
     'آزمایشی': 'bg-orange-500'
   };
 
   return (
-    <section id="projects" className="section-spacing relative overflow-hidden" ref={ref}>
+    <section id="projects" className="section-spacing relative overflow-hidden bg-gradient-cream" ref={ref}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25px 25px, hsl(var(--primary)) 2px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 25px 25px, hsl(291, 73%, 46%) 2px, transparent 0)`,
           backgroundSize: '50px 50px'
         }} />
       </div>
@@ -76,141 +76,44 @@ export const Projects = () => {
                 ease: "linear"
               }}
             >
-              <Lantern glowColor="amber" size="md" animate={isInView} />
+              <Lantern glowColor="moonlight" size="md" animate={isInView} />
             </motion.div>
           </div>
-          <h2 className="text-heading text-white mb-6">
-            پروژه‌های موفق ما
+          <h2 className="text-heading text-gray-800 mb-6">
+            آمار و افتخارات
           </h2>
-          <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-            نمونه‌ای از راه‌حل‌های هوشمندی که برای مشتریان خود طراحی و پیاده‌سازی کرده‌ایم
+          <p className="text-body text-gray-600 max-w-2xl mx-auto">
+            مروری بر دستاوردها و عملکرد فانوس هوش مصنوعی در مسیر توسعه
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 + index * 0.2 }}
-              className="group"
-            >
-              <Card className="bg-card/20 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 h-full hover:shadow-lg hover:shadow-primary/10 overflow-hidden">
-                {/* Project Header */}
-                <div className="p-6 border-b border-border/30">
-                  <div className="flex items-start justify-between mb-4">
-                    <Badge 
-                      variant="secondary" 
-                      className="text-xs"
-                    >
-                      {project.category}
-                    </Badge>
-                    <div className="flex items-center gap-2">
-                      <div className={`w-2 h-2 rounded-full ${statusColors[project.status as keyof typeof statusColors]}`} />
-                      <span className="text-xs text-muted-foreground">{project.status}</span>
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-
-                <CardContent className="p-6">
-                  {/* Features */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-medium text-white mb-3">ویژگی‌های کلیدی:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.features.map((feature, featureIndex) => (
-                        <Badge
-                          key={featureIndex}
-                          variant="outline"
-                          className="text-xs border-primary/30 text-primary"
-                        >
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Metrics */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-medium text-white mb-3">آمار عملکرد:</h4>
-                    <div className="grid grid-cols-3 gap-4">
-                      {Object.entries(project.metrics).map(([key, value], metricIndex) => (
-                        <motion.div
-                          key={key}
-                          className="text-center"
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                          transition={{ 
-                            duration: 0.5, 
-                            delay: 0.5 + index * 0.2 + metricIndex * 0.1 
-                          }}
-                        >
-                          <div className="text-lg font-bold text-primary mb-1">{value}</div>
-                          <div className="text-xs text-muted-foreground">
-                            {key === 'users' && 'کاربران'}
-                            {key === 'accuracy' && 'دقت'}
-                            {key === 'responseTime' && 'زمان پاسخ'}
-                            {key === 'diseases' && 'بیماری'}
-                            {key === 'consultations' && 'مشاوره'}
-                            {key === 'organizations' && 'سازمان'}
-                            {key === 'documents' && 'اسناد'}
-                            {key === 'queries' && 'پرسش'}
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* CTA */}
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    className="w-full text-primary hover:bg-primary/10 group"
-                  >
-                    <span>مطالعه موردی</span>
-                    <ExternalLink className="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
         {/* Stats Section */}
         <motion.div
-          className="text-center"
+          className="text-center py-12 card-professional"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto px-4">
             {[
-              { icon: Users, value: '۳۰۰+', label: 'کاربران فعال' },
-              { icon: TrendingUp, value: '۹۴%', label: 'رضایت مشتریان' },
-              { icon: Calendar, value: '۲ سال', label: 'تجربه فعالیت' },
-              { icon: ExternalLink, value: '۱۵+', label: 'پروژه موفق' }
+              { icon: Users, value: '۳۰۰+', label: 'کاربران فعال', description: 'بیش از سیصد کاربر در پلتفرم ما فعال هستند.' },
+              { icon: TrendingUp, value: '۹۴%', label: 'رضایت مشتریان', description: 'میزان رضایت بالای مشتریان از خدمات و محصولات ما.' },
+              { icon: Calendar, value: '۲ سال', label: 'تجربه فعالیت', description: 'دو سال تجربه موفق در زمینه هوش مصنوعی.' },
+              { icon: ExternalLink, value: '۱۵+', label: 'پروژه موفق', description: 'بیش از پانزده پروژه موفق در حوزه‌های مختلف.' }
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                className="text-center"
+                className="text-center flex flex-col items-center p-4 rounded-md transition-all duration-300 hover:bg-purple-50/50"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
               >
-                <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                  <stat.icon className="w-6 h-6 text-primary" />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-500/20 flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="w-8 h-8 text-purple-600 animate-pulse-light" />
                 </div>
-                <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-3xl font-extrabold text-purple-600 mb-2">{stat.value}</div>
+                <div className="text-lg font-semibold text-gray-800 mb-1">{stat.label}</div>
+                <p className="text-xs text-gray-600 hidden md:block">{stat.description}</p>
               </motion.div>
             ))}
           </div>

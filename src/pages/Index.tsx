@@ -4,9 +4,11 @@ import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
 import { Services } from '@/components/Services';
 import { Projects } from '@/components/Projects';
-import { Technology } from '@/components/Technology';
+import { FAQ } from '@/components/FAQ'; // Import the new FAQ component
 import { Contact } from '@/components/Contact';
 import { Lantern } from '@/components/Lantern';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   const [currentSection, setCurrentSection] = useState('hero');
@@ -22,7 +24,7 @@ const Index = () => {
   // Track current section
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'services', 'projects', 'technology', 'contact'];
+      const sections = ['hero', 'about', 'services', 'projects', 'faq', 'contact']; // Add 'faq' to sections
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       
       for (const section of sections) {
@@ -45,40 +47,21 @@ const Index = () => {
   const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <div className="min-h-screen bg-gradient-night relative">
+    <div className="min-h-screen bg-gradient-cream relative">
+            {/* Header */}
+      <Header />
+      
       {/* Scroll Progress Indicator */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-lantern z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-gold z-50 origin-left"
         style={{ scaleX }}
       />
 
-      {/* Floating Navigation Lantern */}
-      <motion.div
-        className="fixed top-8 left-8 z-40 hidden lg:block"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 2 }}
-      >
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          className="cursor-pointer"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          <Lantern 
-            glowColor={currentSection === 'hero' ? 'amber' : 
-                     currentSection === 'about' ? 'white' :
-                     currentSection === 'services' ? 'violet' :
-                     currentSection === 'projects' ? 'amber' :
-                     currentSection === 'technology' ? 'white' : 'moonlight'}
-            size="sm" 
-            animate={true} 
-          />
-        </motion.div>
-      </motion.div>
+
 
       {/* Floating Contact Button */}
       <motion.button
-        className="fixed bottom-8 right-8 z-40 bg-gradient-lantern text-primary-foreground p-4 rounded-full shadow-glow-amber hover:shadow-glow-amber hover:scale-110 transition-all duration-300"
+        className="fixed bottom-8 right-8 z-40 bg-gradient-gold text-white p-4 rounded-full shadow-lg hover:shadow-purple-500/25 hover:scale-110 transition-all duration-300"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 3 }}
@@ -106,7 +89,7 @@ const Index = () => {
 
       {/* Navigation Menu (Mobile) */}
       <motion.nav
-        className="fixed bottom-0 left-0 right-0 z-40 bg-card/80 backdrop-blur-sm border-t border-border/50 lg:hidden"
+        className="fixed bottom-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-sm border-t border-gray-200/50 lg:hidden shadow-lg"
         initial={{ y: 100 }}
         animate={{ y: 0 }}
         transition={{ delay: 2 }}
@@ -117,15 +100,16 @@ const Index = () => {
             { id: 'about', label: 'درباره' },
             { id: 'services', label: 'خدمات' },
             { id: 'projects', label: 'پروژه‌ها' },
+            { id: 'faq', label: 'سوالات متداول' }, // Add 'faq' to mobile navigation
             { id: 'contact', label: 'تماس' }
           ].map((item) => (
             <button
               key={item.id}
-              className={`px-3 py-2 text-xs rounded-lg transition-colors ${
-                currentSection === item.id 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
+                              className={`px-3 py-2 text-xs rounded-lg transition-colors ${
+                  currentSection === item.id 
+                    ? 'bg-purple-500 text-white' 
+                    : 'text-gray-600 hover:text-purple-600'
+                }`}
               onClick={() => {
                 const element = document.getElementById(item.id === 'hero' ? 'hero' : item.id);
                 element?.scrollIntoView({ behavior: 'smooth' });
@@ -145,31 +129,12 @@ const Index = () => {
         <About />
         <Services />
         <Projects />
-        <Technology />
+        <FAQ />
         <Contact />
       </main>
 
       {/* Footer */}
-      <footer className="bg-card/30 backdrop-blur-sm border-t border-border/30 py-8 relative">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            className="mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <Lantern glowColor="amber" size="sm" animate={true} />
-          </motion.div>
-          
-          <p className="text-muted-foreground text-sm mb-4">
-            © ۱۴۰۳ فانوس هوش مصنوعی. تمامی حقوق محفوظ است.
-          </p>
-          
-          <p className="text-xs text-muted-foreground">
-            "از دل تاریکی، فانوس روشن می‌شود"
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

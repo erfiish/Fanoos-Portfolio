@@ -11,11 +11,11 @@ export const About = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="about" className="section-spacing relative overflow-hidden" ref={ref}>
+    <section id="about" className="section-spacing relative overflow-hidden bg-gradient-cream" ref={ref}>
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-violet rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-gradient-lantern rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-br from-purple-200/30 to-purple-300/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-gradient-to-tr from-gray-200/20 to-gray-300/15 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -27,12 +27,12 @@ export const About = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="mb-8">
-            <Lantern glowColor="white" size="md" animate={isInView} />
+            <Lantern glowColor="violet" size="md" animate={isInView} />
           </div>
-          <h2 className="text-heading text-white mb-6">
+          <h2 className="text-heading text-gray-800 mb-6">
             راه‌گشای هوش مصنوعی در دنیای دانش
           </h2>
-          <p className="text-body text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-body text-gray-600 max-w-3xl mx-auto leading-relaxed">
             فانوس هوش مصنوعی با هدف روشن کردن مسیر دانش و اطلاعات در حوزه‌های تخصصی، 
             دستیارهای هوشمند و کارآمدی را برای سازمان‌ها و متخصصان فراهم می‌آورد. 
             ما معتقدیم که هوش مصنوعی باید همچون فانوسی در تاریکی، راه را برای دستیابی 
@@ -70,19 +70,19 @@ export const About = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
             >
-              <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 h-full">
+              <Card className="card-elegant hover:border-purple-200/50 transition-all duration-300 h-full">
                 <CardContent className="p-6 text-center">
                   <motion.div
-                    className="w-12 h-12 mx-auto mb-4 rounded-full bg-gradient-lantern flex items-center justify-center"
+                    className="w-12 h-12 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-600/20 flex items-center justify-center"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <item.icon className="w-6 h-6 text-primary-foreground" />
+                    <item.icon className="w-6 h-6 text-purple-600" />
                   </motion.div>
-                  <h3 className="text-lg font-semibold text-white mb-3">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     {item.description}
                   </p>
                 </CardContent>
@@ -91,40 +91,7 @@ export const About = () => {
           ))}
         </motion.div>
 
-        {/* Team Section */}
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <h3 className="text-subheading text-white mb-8">تیم ما</h3>
-          
-          <Card className="max-w-md mx-auto bg-card/50 backdrop-blur-sm border-border/50">
-            <CardContent className="p-6">
-              <motion.div
-                className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-lantern flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <span className="text-2xl font-bold text-primary-foreground">ع</span>
-              </motion.div>
-              
-              <h4 className="text-lg font-semibold text-white mb-2">
-                عرفان شفیعی مقدم
-              </h4>
-              
-              <Badge variant="secondary" className="mb-3">
-                AI & ML Lead
-              </Badge>
-              
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                متخصص هوش مصنوعی و یادگیری ماشین با تجربه گسترده در توسعه 
-                سیستم‌های هوشمند و پردازش زبان طبیعی فارسی
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
+        
       </div>
     </section>
   );

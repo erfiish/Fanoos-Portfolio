@@ -55,7 +55,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Lantern-specific colors
+				// Professional Lantern colors
 				lantern: {
 					amber: 'hsl(var(--lantern-amber))',
 					white: 'hsl(var(--lantern-white))',
@@ -65,12 +65,14 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-lantern': 'var(--gradient-lantern)',
-				'gradient-night': 'var(--gradient-night)',
-				'gradient-violet': 'var(--gradient-violet)'
+				'gradient-cream': 'var(--gradient-cream)',
+				'gradient-gold': 'var(--gradient-gold)',
+				'gradient-header': 'var(--gradient-header)',
+				'gradient-footer': 'var(--gradient-footer)'
 			},
 			boxShadow: {
 				'glow-amber': 'var(--glow-amber)',
-				'glow-violet': 'var(--glow-violet)',
+				'glow-gold': 'var(--glow-gold)',
 				'glow-white': 'var(--glow-white)'
 			},
 			borderRadius: {

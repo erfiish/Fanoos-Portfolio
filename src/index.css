@@ -2,61 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fanoos AI Design System - Persian-optimized with lantern metaphor */
+/* Fanoos AI Design System - Professional Cream & Gold Theme */
 
 @layer base {
   :root {
-    /* Night sky background - Deep space */
-    --background: 216 47% 8%;
-    --foreground: 0 0% 100%;
+    /* Professional Cream Background - Based on #f9f5ec */
+    --background: 45 33% 96%; /* #f9f5ec */
+    --foreground: 220 13% 18%; /* Dark text for contrast */
 
-    /* Lantern glow colors */
-    --lantern-amber: 44 91% 58%;
+    /* Professional Gold Accents */
+    --lantern-amber: 38 92% 50%; /* Rich gold */
     --lantern-white: 0 0% 100%;
-    --lantern-violet: 248 53% 65%;
-    --lantern-moonlight: 216 33% 88%;
+    --lantern-violet: 220 13% 18%; /* Deep charcoal */
+    --lantern-moonlight: 45 33% 96%; /* Cream */
 
     /* Card and surface colors */
-    --card: 218 41% 15%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 220 13% 18%;
 
-    --popover: 218 41% 15%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
 
-    /* Primary colors - Lantern amber */
-    --primary: 44 91% 58%;
-    --primary-foreground: 216 47% 8%;
+    /* Primary colors - Professional Purple */
+    --primary: 291 73% 46%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary colors - Night accent */
-    --secondary: 248 53% 65%;
+    /* Secondary colors - Deep Charcoal */
+    --secondary: 220 13% 18%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted colors - Soft night */
-    --muted: 218 41% 20%;
-    --muted-foreground: 216 33% 68%;
+    /* Muted colors - Soft Cream */
+    --muted: 45 33% 96%;
+    --muted-foreground: 220 13% 45%;
 
-    /* Accent colors - Violet glow */
-    --accent: 248 53% 65%;
+    /* Accent colors - Professional Purple */
+    --accent: 291 73% 46%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders and inputs - Subtle night */
-    --border: 218 41% 25%;
-    --input: 218 41% 25%;
-    --ring: 44 91% 58%;
+    /* Borders and inputs - Subtle Cream */
+    --border: 45 33% 90%;
+    --input: 45 33% 96%;
+    --ring: 291 73% 46%;
 
     --radius: 1rem;
 
-    /* Gradients for lantern effects */
-    --gradient-lantern: linear-gradient(135deg, hsl(44, 91%, 58%), hsl(44, 91%, 68%));
-    --gradient-night: linear-gradient(180deg, hsl(216, 47%, 8%), hsl(218, 41%, 12%));
-    --gradient-violet: linear-gradient(135deg, hsl(248, 53%, 65%), hsl(248, 53%, 75%));
+    /* Professional Gradients */
+    --gradient-lantern: linear-gradient(135deg, hsl(291, 73%, 46%), hsl(291, 73%, 56%));
+    --gradient-cream: linear-gradient(180deg, hsl(45, 33%, 96%), hsl(45, 33%, 98%));
+    --gradient-gold: linear-gradient(135deg, hsl(291, 73%, 46%), hsl(291, 73%, 61%));
+    --gradient-header: linear-gradient(180deg, rgba(249, 245, 236, 0.95), rgba(249, 245, 236, 0.98));
+    --gradient-footer: linear-gradient(180deg, hsl(220, 13%, 18%), hsl(220, 13%, 22%));
     
-    /* Glow effects */
-    --glow-amber: 0 0 40px hsl(44, 91%, 58%);
-    --glow-violet: 0 0 40px hsl(248, 53%, 65%);
+    /* Professional Glow Effects */
+    --glow-amber: 0 0 40px hsl(291, 73%, 46%);
+    --glow-gold: 0 0 30px hsl(291, 73%, 56%);
     --glow-white: 0 0 30px hsl(0, 0%, 100%);
 
     /* Typography scale for Persian */
@@ -89,7 +91,7 @@
 
   body {
     @apply bg-background text-foreground font-persian antialiased;
-    background: var(--gradient-night);
+    background: var(--gradient-cream);
     min-height: 100vh;
   }
 
@@ -132,30 +134,38 @@
     font-weight: 400;
   }
 
-  /* Lantern Glow Effects */
+  /* Professional Glow Effects */
   .glow-amber {
     box-shadow: var(--glow-amber);
   }
 
-  .glow-violet {
-    box-shadow: var(--glow-violet);
+  .glow-gold {
+    box-shadow: var(--glow-gold);
   }
 
   .glow-white {
     box-shadow: var(--glow-white);
   }
 
-  /* Gradient Backgrounds */
+  /* Professional Gradient Backgrounds */
   .bg-gradient-lantern {
     background: var(--gradient-lantern);
   }
 
-  .bg-gradient-night {
-    background: var(--gradient-night);
+  .bg-gradient-cream {
+    background: var(--gradient-cream);
   }
 
-  .bg-gradient-violet {
-    background: var(--gradient-violet);
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-header {
+    background: var(--gradient-header);
+  }
+
+  .bg-gradient-footer {
+    background: var(--gradient-footer);
   }
 
   /* Animation Classes */
@@ -174,11 +184,22 @@
   /* Persian Layout Utilities */
   .section-spacing {
     padding-top: var(--spacing-section);
-    padding-bottom: var(--spacing-section);
+    padding-bottom: 4rem;
   }
 
   .element-spacing {
     margin-bottom: var(--spacing-element);
+  }
+
+  /* Professional Card Styles */
+  .card-professional {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-100;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+    backdrop-filter: blur(10px);
+  }
+
+  .card-elegant {
+    @apply bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl border border-gray-200/50;
   }
 
   /* Custom Scrollbar */
@@ -204,10 +225,10 @@
   /* Custom Animations */
   @keyframes lanternGlow {
     0% {
-      filter: drop-shadow(0 0 20px hsl(44, 91%, 58%));
+      filter: drop-shadow(0 0 20px hsl(291, 73%, 46%));
     }
     100% {
-      filter: drop-shadow(0 0 40px hsl(44, 91%, 68%));
+      filter: drop-shadow(0 0 40px hsl(291, 73%, 56%));
     }
   }
 
@@ -229,6 +250,20 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Professional Background Patterns */
+  .bg-pattern-dots {
+    background-image: radial-gradient(circle, hsl(291, 73%, 46%) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+  }
+
+  .bg-pattern-grid {
+    background-image: 
+      linear-gradient(hsl(45, 33%, 90%) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(45, 33%, 90%) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 
   /* Responsive Typography */

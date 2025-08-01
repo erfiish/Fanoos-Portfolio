@@ -21,8 +21,8 @@ export const Services = () => {
         'بررسی قراردادها',
         'راهنمایی در امور قضایی'
       ],
-      color: 'amber' as const,
-      gradient: 'from-yellow-500 to-orange-500'
+      color: 'purple' as const,
+      gradient: 'from-purple-500 to-purple-600'
     },
     {
       icon: Stethoscope,
@@ -35,7 +35,7 @@ export const Services = () => {
         'پشتیبانی تصمیمات بالینی'
       ],
       color: 'white' as const,
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-purple-500 to-purple-600'
     },
     {
       icon: Building2,
@@ -53,14 +53,14 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" className="section-spacing relative overflow-hidden" ref={ref}>
+    <section id="services" className="section-spacing relative overflow-hidden bg-gradient-cream" ref={ref}>
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full">
           {Array.from({ length: 20 }).map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-px h-20 bg-gradient-to-b from-primary to-transparent"
+              className="absolute w-px h-20 bg-gradient-to-b from-purple-500 to-transparent"
               style={{
                 left: `${(i + 1) * 5}%`,
                 top: `${Math.random() * 100}%`,
@@ -89,12 +89,12 @@ export const Services = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="mb-8">
-            <Lantern glowColor="violet" size="md" animate={isInView} />
+            <Lantern glowColor="amber" size="md" animate={isInView} />
           </div>
-          <h2 className="text-heading text-white mb-6">
+          <h2 className="text-heading text-gray-800 mb-6">
             خدمات هوش مصنوعی تخصصی
           </h2>
-          <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-body text-gray-600 max-w-2xl mx-auto">
             دستیارهای هوشمند ما در سه حوزه کلیدی، راه‌حل‌های دقیق و کارآمد ارائه می‌دهند
           </p>
         </motion.div>
@@ -109,7 +109,7 @@ export const Services = () => {
               transition={{ duration: 0.8, delay: 0.2 + index * 0.2 }}
               className="group"
             >
-              <Card className="bg-card/30 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 h-full hover:shadow-lg hover:shadow-primary/10">
+              <Card className="card-elegant hover:border-purple-200/50 transition-all duration-500 h-full hover:shadow-xl">
                 <CardContent className="p-8">
                   {/* Service Icon with Glow */}
                   <motion.div
@@ -117,7 +117,7 @@ export const Services = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-glow-amber`}>
+                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-lg`}>
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
                     
@@ -133,12 +133,12 @@ export const Services = () => {
                   </motion.div>
 
                   {/* Service Title */}
-                  <h3 className="text-xl font-semibold text-white mb-4 text-center leading-relaxed">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center leading-relaxed">
                     {service.title}
                   </h3>
 
                   {/* Service Description */}
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed text-center">
+                  <p className="text-gray-600 text-sm mb-6 leading-relaxed text-center">
                     {service.description}
                   </p>
 
@@ -147,7 +147,7 @@ export const Services = () => {
                     {service.features.map((feature, featureIndex) => (
                       <motion.li
                         key={featureIndex}
-                        className="flex items-center gap-3 text-sm text-muted-foreground"
+                        className="flex items-center gap-3 text-sm text-gray-600"
                         initial={{ opacity: 0, x: 20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ 
@@ -155,7 +155,7 @@ export const Services = () => {
                           delay: 0.5 + index * 0.2 + featureIndex * 0.1 
                         }}
                       >
-                        <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full bg-purple-500 flex-shrink-0" />
                         <span>{feature}</span>
                       </motion.li>
                     ))}
@@ -167,7 +167,7 @@ export const Services = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Button 
-                      className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-glow-amber transition-all duration-300 group"
+                      className="w-full bg-gradient-gold text-white hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 group"
                       size="lg"
                     >
                       <span>بیشتر بدانید</span>
@@ -187,13 +187,13 @@ export const Services = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <p className="text-muted-foreground mb-6">
+          <p className="text-gray-600 mb-6">
             برای دریافت مشاوره رایگان و بررسی نیازهای خاص سازمان شما
           </p>
           <Button 
             size="lg" 
             variant="outline"
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8"
+            className="border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white px-8"
           >
             درخواست مشاوره رایگان
           </Button>
