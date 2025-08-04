@@ -32,11 +32,14 @@ const Header: React.FC = () => {
             <a href="#about" className="text-gray-700 hover:text-primary transition-colors px-4 py-2 rounded-lg hover:bg-white/60 mx-3 font-medium">
               درباره ما
             </a>
-            <a href="#services" className="text-gray-700 hover:text-primary transition-colors px-4 py-2 rounded-lg hover:bg-white/60 mx-3 font-medium">
-              خدمات
+            <a href="#achievements" className="text-gray-700 hover:text-primary transition-colors px-4 py-2 rounded-lg hover:bg-white/60 mx-3 font-medium">
+              دستاوردها
             </a>
-            <a href="#projects" className="text-gray-700 hover:text-primary transition-colors px-4 py-2 rounded-lg hover:bg-white/60 mx-3 font-medium">
-              آمار و افتخارات
+            <a href="#services" className="text-gray-700 hover:text-primary transition-colors px-4 py-2 rounded-lg hover:bg-white/60 mx-3 font-medium">
+              محصولات
+            </a>
+            <a href="#faq" className="text-gray-700 hover:text-primary transition-colors px-4 py-2 rounded-lg hover:bg-white/60 mx-3 font-medium">
+              سوالات متداول
             </a>
             <a href="#contact" className="text-gray-700 hover:text-primary transition-colors px-4 py-2 rounded-lg hover:bg-white/60 mx-3 font-medium">
               تماس

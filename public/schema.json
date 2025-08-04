@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Fanoos AI",
+  "alternateName": "فانوس ای‌آی",
+  "url": "https://fanoos.ai/",
+  "logo": "https://fanoos.ai/images/logos/fanoos-logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@fanoosai.com",
+    "telephone": "+989128468861",
+    "contactType": "customer service",
+    "areaServed": "IR",
+    "availableLanguage": ["Persian", "English"]
+  },
+  "description": "فانوس ای‌آی، پیشرو در توسعه راهکارهای بومی هوش مصنوعی برای بازار ایران",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "تهران",
+    "addressRegion": "تهران",
+    "addressCountry": "IR",
+    "streetAddress": "میدان ونک، بزرگراه حقانی، مرکز رشد واحد فناور دانشگاه علامه طباطبایی (ره)، طبقه سوم"
+  },
+  "sameAs": []
+}

@@ -172,6 +172,8 @@ export const Lantern = ({
       <motion.svg
         viewBox="0 0 200 280"
         className="w-full h-full relative z-10"
+        aria-labelledby="lantern-title"
+        role="img"
         style={{
           filter: isLit ? `drop-shadow(0 0 ${intensity * 25}px ${currentGlow.primary}) drop-shadow(0 0 ${intensity * 50}px ${currentGlow.primary}50)` : 'drop-shadow(0 0 5px rgba(0,0,0,0.5))'
         }}
@@ -185,6 +187,7 @@ export const Lantern = ({
           ease: "easeInOut"
         }}
       >
+        <title id="lantern-title">فانوس هوشمند ای‌آی</title>
         <defs>
           {/* Enhanced gradients */}
           <radialGradient id={`lanternGlow-${glowColor}`} cx="50%" cy="50%" r="70%">

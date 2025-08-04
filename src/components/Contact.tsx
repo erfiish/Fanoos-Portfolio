@@ -3,38 +3,83 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Calendar, Mail, Phone, MapPin, Send, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { Lantern } from "./Lantern";
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
-  const [formStatus, setFormStatus] = useState('idle'); // idle, success
+  const [formStatus, setFormStatus] = useState('idle'); // idle, success, error, loading
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'ایمیل',
-      value: 'info@fanoos-ai.com',
+      value: 'info@fanoosai.com',
       description: 'پاسخ در کمتر از ۲۴ ساعت'
     },
     {
       icon: Phone,
       title: 'تلفن',
-      value: '+98 21 1234 5678',
-      description: 'دوشنبه تا جمعه، ۹ تا ۱۸'
+      value: '۰۹۱۲۸۴۶۸۸۶۱',
+      description: 'پاسخگویی در تمام ساعات'
     },
     {
       icon: MapPin,
       title: 'آدرس',
-      value: 'تهران، ایران',
-      description: 'دفتر مرکزی فانوس'
+      value: 'تهران، میدان ونک، بزرگراه حقانی',
+      description: 'مرکز رشد واحد فناور دانشگاه علامه طباطبایی (ره)، طبقه سوم، شرکت فانوس ای آی'
     }
   ];
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormStatus('success');
-    setTimeout(() => setFormStatus('idle'), 3000);
+    setFormStatus('loading');
+
+    try {
+      // Replace these with your actual EmailJS credentials
+      const result = await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          from_phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'info@fanoosai.com'
+        },
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
+      if (result.status === 200) {
+        setFormStatus('success');
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setTimeout(() => setFormStatus('idle'), 5000);
+      } else {
+        setFormStatus('error');
+        setTimeout(() => setFormStatus('idle'), 5000);
+      }
+    } catch (error) {
+      console.error('Email send error:', error);
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 5000);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   return (
@@ -138,6 +183,20 @@ export const Contact = () => {
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">پیام شما ارسال شد!</h3>
                 <p className="text-gray-600 text-lg">به زودی با شما تماس خواهیم گرفت</p>
               </motion.div>
+            ) : formStatus === 'error' ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-12"
+              >
+                <div className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">خطا در ارسال پیام</h3>
+                <p className="text-gray-600 text-lg">لطفاً دوباره تلاش کنید یا با ما تماس بگیرید</p>
+              </motion.div>
             ) : (
               <>
                 <div className="text-center mb-8">
@@ -149,12 +208,16 @@ export const Contact = () => {
                   </p>
                 </div>
                 
-                <div className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-gray-700 text-sm font-medium mb-3">نام و نام خانوادگی</label>
                       <input
                         type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
                         className="w-full bg-white border border-gray-200 rounded-xl px-5 py-4 text-gray-800 placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300"
                         placeholder="نام شما"
                       />
@@ -163,6 +226,10 @@ export const Contact = () => {
                       <label className="block text-gray-700 text-sm font-medium mb-3">ایمیل</label>
                       <input
                         type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
                         className="w-full bg-white border border-gray-200 rounded-xl px-5 py-4 text-gray-800 placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300"
                         placeholder="your@email.com"
                       />
@@ -173,6 +240,9 @@ export const Contact = () => {
                     <label className="block text-gray-700 text-sm font-medium mb-3">شماره تماس (اختیاری)</label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="w-full bg-white border border-gray-200 rounded-xl px-5 py-4 text-gray-800 placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300"
                       placeholder="۰۹۱۲۳۴۵۶۷۸۹"
                     />
@@ -182,6 +252,10 @@ export const Contact = () => {
                     <label className="block text-gray-700 text-sm font-medium mb-3">موضوع</label>
                     <input
                       type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
                       className="w-full bg-white border border-gray-200 rounded-xl px-5 py-4 text-gray-800 placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300"
                       placeholder="موضوع پیام شما"
                     />
@@ -190,6 +264,10 @@ export const Contact = () => {
                   <div>
                     <label className="block text-gray-700 text-sm font-medium mb-3">پیام</label>
                     <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
                       rows={5}
                       className="w-full bg-white border border-gray-200 rounded-xl px-5 py-4 text-gray-800 placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 resize-none"
                       placeholder="پیام خود را با جزئیات بنویسید..."
@@ -197,15 +275,25 @@ export const Contact = () => {
                   </div>
                   
                   <motion.button
-                    onClick={handleSubmit}
-                    className="w-full bg-gradient-gold text-white font-semibold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-3"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    disabled={formStatus === 'loading'}
+                    className="w-full bg-gradient-gold text-white font-semibold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                    whileHover={{ scale: formStatus === 'loading' ? 1 : 1.02 }}
+                    whileTap={{ scale: formStatus === 'loading' ? 1 : 0.98 }}
                   >
-                    <MessageSquare className="w-5 h-5" />
-                    ارسال پیام
+                    {formStatus === 'loading' ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        در حال ارسال...
+                      </>
+                    ) : (
+                      <>
+                        <MessageSquare className="w-5 h-5" />
+                        ارسال پیام
+                      </>
+                    )}
                   </motion.button>
-                </div>
+                </form>
               </>
             )}
           </div>

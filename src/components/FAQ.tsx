@@ -83,9 +83,10 @@ export const FAQ = () => {
               <Lantern glowColor="amber" size="md" animate={isInView} />
             </motion.div>
           </div>
-          <h2 className="text-heading text-gray-800 mb-6">
+          <h2 className="text-heading text-gray-800 mb-4">
             سوالات متداول
           </h2>
+          <div className="w-20 h-1 bg-purple-600 mx-auto mb-6"></div>
           <p className="text-body text-gray-600 max-w-2xl mx-auto">
             پاسخ به پرتکرارترین سوالات شما درباره فانوس هوش مصنوعی
           </p>
