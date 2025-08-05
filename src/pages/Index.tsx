@@ -24,7 +24,7 @@ const Index = () => {
   // Track current section
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'achievements', 'services', 'faq', 'contact'];
+      const sections = ['hero', 'about', 'services', 'achievements', 'faq', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       
       for (const section of sections) {
@@ -98,9 +98,9 @@ const Index = () => {
           {[
             { id: 'hero', label: 'خانه' },
             { id: 'about', label: 'درباره' },
-            { id: 'achievements', label: 'دستاوردها' },
             { id: 'services', label: 'محصولات' },
-            { id: 'faq', label: 'سوالات متداول' }, // Add 'faq' to mobile navigation
+            { id: 'achievements', label: 'دستاوردها' },
+            { id: 'faq', label: 'سوالات متداول' },
             { id: 'contact', label: 'تماس' }
           ].map((item) => (
             <button
@@ -127,8 +127,8 @@ const Index = () => {
           <Hero />
         </div>
         <About />
-        <Achievements />
         <Services />
+        <Achievements />
         <FAQ />
         <Contact />
       </main>

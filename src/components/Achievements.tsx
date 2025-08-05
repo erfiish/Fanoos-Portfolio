@@ -17,10 +17,10 @@ export const Achievements = () => {
     { 
       icon: Users, 
       value: counts.users,
-      finalValue: 300,
-      suffix: '+',
+      finalValue: 10000,
+      suffix: '',
       label: 'کاربران فعال', 
-      description: 'بیش از سیصد کاربر در پلتفرم ما فعال هستند.',
+      description: 'بیش از ده هزار کاربر در پلتفرم ما فعال هستند.',
       duration: 2
     },
     { 
@@ -89,7 +89,7 @@ export const Achievements = () => {
             دستاوردها و افتخارات ما
           </h2>
           <p className="text-body text-gray-600 max-w-2xl mx-auto">
-            نگاهی به مسیر رشد و موفقیت فانوس در ارائه راهکارهای هوشمند
+            نگاهی به مسیر رشد و موفقیت هوش مصنوعی فانوس در ارائه راهکارهای هوشمند
           </p>
         </motion.div>
 

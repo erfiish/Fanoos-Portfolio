@@ -67,7 +67,7 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           <h2 className="text-heading text-purple-600 font-semibold mb-2">
-            فانوس هوش مصنوعی (Fanoos AI)
+            هوش مصنوعی فانوس (Fanoos AI)
           </h2>
           <p className="text-body text-gray-600 max-w-2xl mx-auto">
             دستیار هوشمند شما برای زندگی و کسب‌و‌کار

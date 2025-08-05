@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         
         <div className="flex flex-col items-center space-y-1">
           <p className="text-gray-700 text-sm font-medium">
-            © ۱۴۰۴ فانوس هوش مصنوعی. تمامی حقوق محفوظ است.
+            © ۱۴۰۴ هوش مصنوعی فانوس. تمامی حقوق محفوظ است.
           </p>
           <p className="text-xs text-purple-600 italic mt-1">
             "از دل تاریکی، فانوس روشن می‌شود"

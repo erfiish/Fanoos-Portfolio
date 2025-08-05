@@ -18,7 +18,7 @@
 3. Use this template:
 
 ```html
-Subject: پیام جدید از وب‌سایت فانوس - {{subject}}
+Subject: پیام جدید از وب‌سایت هوش مصنوعی فانوس - {{subject}}
 
 نام: {{from_name}}
 ایمیل: {{from_email}}
@@ -29,7 +29,7 @@ Subject: پیام جدید از وب‌سایت فانوس - {{subject}}
 {{message}}
 
 ---
-این پیام از فرم تماس وب‌سایت فانوس ارسال شده است.
+این پیام از فرم تماس وب‌سایت هوش مصنوعی فانوس ارسال شده است.
 ```
 
 4. Save the template and note down your **Template ID**

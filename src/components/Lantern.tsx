@@ -187,7 +187,7 @@ export const Lantern = ({
           ease: "easeInOut"
         }}
       >
-        <title id="lantern-title">فانوس هوشمند ای‌آی</title>
+        <title id="lantern-title">هوش مصنوعی فانوس</title>
         <defs>
           {/* Enhanced gradients */}
           <radialGradient id={`lanternGlow-${glowColor}`} cx="50%" cy="50%" r="70%">

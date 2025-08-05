@@ -2,7 +2,7 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Fanoos AI",
-  "alternateName": "فانوس ای‌آی",
+      "alternateName": "هوش مصنوعی فانوس",
   "url": "https://fanoos.ai/",
   "logo": "https://fanoos.ai/images/logos/fanoos-logo.png",
   "contactPoint": {
@@ -13,7 +13,7 @@
     "areaServed": "IR",
     "availableLanguage": ["Persian", "English"]
   },
-  "description": "فانوس ای‌آی، پیشرو در توسعه راهکارهای بومی هوش مصنوعی برای بازار ایران",
+      "description": "هوش مصنوعی فانوس، پیشرو در توسعه راهکارهای بومی هوش مصنوعی برای بازار ایران",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "تهران",
