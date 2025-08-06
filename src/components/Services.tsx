@@ -4,7 +4,7 @@ import { Lantern } from './Lantern';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ArrowRight, Scale, LineChart, Sparkles, Heart, GraduationCap } from 'lucide-react';
+import { ChevronLeft, ArrowRight, Scale, LineChart, Sparkles, Heart, GraduationCap, Building2 } from 'lucide-react';
 
 export const Services = () => {
   const ref = useRef(null);
@@ -61,6 +61,16 @@ export const Services = () => {
       iconBg: 'from-pink-500 to-pink-600',
       status: 'در حال توسعه',
       features: ['مشاوره روزآمد و مقرون‌به‌صرفه', 'شخصی‌سازی‌شده', 'پایش مداوم وضعیت فردی'],
+    },
+    {
+      title: 'نمانوس: دستیار نمایشگاهی هوش مصنوعی فانوس',
+      description: 'نمانوس، دستیار هوشمند تخصصی برای مدیریت و بهینه‌سازی نمایشگاه‌ها و رویدادهای تجاری است که با استفاده از هوش مصنوعی، تجربه‌ای منحصر به فرد برای بازدیدکنندگان و برگزارکنندگان فراهم می‌کند.',
+      longDescription: 'نمانوس، دستیار نمایشگاهی هوش مصنوعی فانوس، راهکار جامعی برای دیجیتالی‌سازی و هوشمندسازی نمایشگاه‌ها ارائه می‌دهد. این پلتفرم با قابلیت‌های پیشرفته مانند راهنمایی هوشمند بازدیدکنندگان، تحلیل رفتار و ترافیک، مدیریت صف‌ها، و ارائه اطلاعات تخصصی محصولات، تجربه‌ای نوین در حوزه نمایشگاه‌های تجاری ایجاد می‌کند.',
+      category: 'نمایشگاهی',
+      icon: Building2,
+      iconBg: 'from-indigo-500 to-indigo-600',
+      status: 'در حال توسعه',
+      features: ['راهنمایی هوشمند', 'مدیریت صف‌ها', 'تحلیل رفتار بازدیدکنندگان'],
     }
   ];
 
