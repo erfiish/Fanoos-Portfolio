@@ -92,6 +92,7 @@ export const Hero = () => {
             variant="outline" 
             size="lg"
             className="w-full sm:w-auto border-2 border-purple-300 text-purple-600 hover:bg-purple-200 hover:border-purple-500 hover:text-purple-800 transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg min-w-0 sm:min-w-[180px]"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             تماس با ما
           </Button>
