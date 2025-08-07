@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Calendar, Mail, Phone, MapPin, Send, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { Calendar, Mail, MapPin, Send, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { Lantern } from "./Lantern";
 import emailjs from '@emailjs/browser';
 
@@ -25,16 +25,16 @@ export const Contact = () => {
       description: 'پاسخ در کمتر از ۲۴ ساعت'
     },
     {
-      icon: Phone,
-      title: 'تلفن',
+      icon: MessageSquare,
+      title: 'واتساپ',
       value: '۰۹۱۲۸۴۶۸۸۶۱',
-      description: 'پاسخگویی در تمام ساعات'
+      description: 'ارسال پیام در واتساپ'
     },
     {
       icon: MapPin,
       title: 'آدرس',
       value: 'تهران، میدان ونک، بزرگراه حقانی',
-      description: 'مرکز رشد واحد فناور دانشگاه علامه طباطبایی (ره)، طبقه سوم، شرکت هوش مصنوعی فانوس'
+      description: 'مرکز رشد واحدهای فناور دانشگاه علامه طباطبایی (ره)، طبقه سوم، شرکت هوش مصنوعی فانوس'
     }
   ];
 

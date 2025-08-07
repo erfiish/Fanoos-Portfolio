@@ -20,7 +20,7 @@ export const Services = () => {
       icon: GraduationCap,
       iconBg: 'from-purple-500 to-purple-600',
       status: 'در حال توسعه',
-      features: ['تسریع چرخه یادگیری', 'افزایش چابکی سازمانی', 'بهینه‌سازی عملکرد'],
+      features: [],
     },
     {
       title: 'کپنوس: دستیار معاملاتی هوشمند',
@@ -30,7 +30,7 @@ export const Services = () => {
       icon: LineChart,
       iconBg: 'from-green-500 to-green-600',
       status: 'در حال توسعه',
-      features: ['تحلیل تکنیکال', 'تحلیل بنیادی', 'تابلوخوانی'],
+      features: [],
     },
     {
       title: 'دادنوس: دستیار حقوقی هوشمند',
@@ -40,7 +40,7 @@ export const Services = () => {
       icon: Scale,
       iconBg: 'from-blue-500 to-blue-600',
       status: 'در حال توسعه',
-      features: ['درک متنی عمیق', 'پردازش زبان فارسی حقوقی', 'پاسخ‌گویی دقیق و سریع'],
+      features: [],
     },
     {
       title: 'هلثا: دستیار سلامت هوشمند',
@@ -50,7 +50,7 @@ export const Services = () => {
       icon: Heart,
       iconBg: 'from-red-500 to-red-600',
       status: 'در حال توسعه',
-      features: ['تغذیه', 'فعالیت بدنی', 'روان‌شناسی'],
+      features: [],
     },
     {
       title: 'شایلی: دستیار هوش مصنوعی پوست و مو',
@@ -60,7 +60,7 @@ export const Services = () => {
       icon: Sparkles,
       iconBg: 'from-pink-500 to-pink-600',
       status: 'در حال توسعه',
-      features: ['مشاوره روزآمد و مقرون‌به‌صرفه', 'شخصی‌سازی‌شده', 'پایش مداوم وضعیت فردی'],
+      features: [],
     },
     {
       title: 'نمانوس: دستیار نمایشگاهی هوش مصنوعی فانوس',
@@ -70,7 +70,7 @@ export const Services = () => {
       icon: Building2,
       iconBg: 'from-indigo-500 to-indigo-600',
       status: 'در حال توسعه',
-      features: ['راهنمایی هوشمند', 'مدیریت صف‌ها', 'تحلیل رفتار بازدیدکنندگان'],
+      features: [],
     }
   ];
 
@@ -156,23 +156,10 @@ export const Services = () => {
 
                     {/* Description */}
                     <div className="relative">
-                      <p className="text-gray-600 text-base sm:text-lg mb-6 leading-relaxed">
+                      <p className="text-gray-600 text-base sm:text-lg mb-4 leading-relaxed">
                         {product.description}
                       </p>
                       <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
-                    </div>
-
-                    {/* Features */}
-                    <div className="mb-6 flex flex-wrap gap-2">
-                      {product.features.map((feature, i) => (
-                        <Badge 
-                          key={i} 
-                          variant="outline"
-                          className="border-2 border-gray-200 text-gray-700 bg-white hover:bg-gray-50 transition-colors text-sm px-4 py-1 rounded-full"
-                        >
-                          {feature}
-                        </Badge>
-                      ))}
                     </div>
 
                     {/* Button */}
